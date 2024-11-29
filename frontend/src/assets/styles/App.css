@@ -1,0 +1,257 @@
+
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Navbar*/
+.navbar {
+    background-color: #69ae8c; 
+    color: rgb(65, 65, 65);
+    padding: 0.7rem 1rem;
+}
+
+.navbar-brand {
+    color: rgb(44, 43, 43);
+    text-decoration:overline;
+    font-size: 1.6rem;
+    font-weight:600;
+}
+
+.navbar-nav {
+    list-style: disc;
+    padding: 0.5rem;
+    margin: 0;
+    display:flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 2rem;
+}
+
+.nav-link {
+    color: rgb(28, 28, 28);
+    text-decoration:overline;
+    transition: color 0.3s ease;
+    font-weight:450;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #ece9e9;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+/*company page*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #efeeee;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align:left;
+    color: rgb(76, 76, 76);
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+    font-weight:600;
+}
+
+/*
+.Company {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+}
+*/
+
+@media (max-width: 768px) {
+    .Company {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .Network {
+        margin-top: 10px;
+    }
+}
+
+/* Container styling */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px;
+    margin: auto;
+    max-width: 600px;
+  }
+
+  /*network selector (dropdown)*/
+.network-selector {
+    margin: 5px ;
+    padding: 5px;
+    width: 40%;
+    background-color: #69ae8c; 
+    border-radius: 4px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .network-selector select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 16px; 
+  }
+  
+  .network-selector option {
+    padding: 10px; 
+    background-color:#f2f2f2;
+    color:#69ae8c
+  }
+
+  .network-selector select:hover {
+    background-color:#69ae8c;
+  }
+  
+  /* Network container (hyperlink) */
+  .network-container {
+    margin-top: 20px;
+    max-width: 250px; 
+    padding: 15px;
+    background-color: #f0f0f0; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  }
+  
+  .list-customer {
+    list-style-type:decimal; 
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .list-customer li {
+    margin-bottom: 10px; 
+  }
+  
+  .list-customer li a {
+    color: #282b2f; 
+    text-decoration: none; 
+  }
+  
+  .list-customer li a:hover {
+    text-decoration: underline;
+  }
+
+.networkgraph {
+    padding: 15px;
+    background-color: #4c4d4f;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+
+/*transaction page*/
+.transaction-page {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    background-color: #efeeee;
+  }
+  
+  /* .customer-list {
+    list-style: none;
+    padding: 10;
+    margin: 20px 0;
+    max-width: 250px; 
+    border: 2px solid #efeeee;
+    border-radius: 5px;
+    overflow:auto;
+  } */
+  
+  /* .customer-list li {
+    border-bottom: 1px solid #ddd; 
+  }
+  
+  .customer-list li:last-child {
+    border-bottom: none; 
+  }
+   */
+  
+  .customer-list button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color:#d5d4d4;
+    text-align: center;
+    transition: background-color 0.s ease; 
+  }
+  
+  .customer-list button:hover,
+  .customer-list button.active {
+    background-color:#69ae8c; 
+    color: white; 
+    cursor: pointer;
+  }
+  
+ 
+
+
+  /* Container for both customer list and filtered transactions */
+.container {
+  display: flex;
+  justify-content: space-between; /* Space out the child elements */
+  align-items: flex-start; /* Align items at the start of the cross axis */
+  gap: 20px; /* Add some space between the elements */
+}
+
+/* Styling for the customer list */
+.customer-list {
+  flex: 1; /* Take up equal space */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Styling for the filtered transactions */
+.filtered-transactions {
+  flex: 2; /* Allow to take more space than the customer list */
+  padding: 20px;
+  background-color: #fff; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Common styling for both sections */
+.customer-list, .filtered-transactions {
+  overflow: auto; /* Add scroll if content overflows */
+  margin-bottom: 20px; /* Space at the bottom */
+}
+
+.customer-list ul, .filtered-transactions ul {
+  list-style: none; /* Remove default list style */
+  padding: 0;
+}
+
+.customer-list li, .filtered-transactions li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee; /* Light line between items */
+}
+
+.customer-list li:last-child, .filtered-transactions li:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
