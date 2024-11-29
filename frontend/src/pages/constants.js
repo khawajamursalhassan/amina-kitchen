@@ -1,32 +1,23 @@
 import { Link } from "react-router-dom";
 
-export const accountColumns = [
-  {
-    title: "Id",
-    dataIndex: "account_id",
-    key: "account_id",
-  },
-  {
-    title: "Title",
-    dataIndex: "account_title",
-    key: "account_title",
-  },
-  {
-    title: "Number",
-    dataIndex: "account_number",
-    key: "account_number",
-  },
-  {
-    title: "Status",
-    dataIndex: "status",
-    key: "status",
-  },
-  {
-    title: "See transactions",
-    dataIndex: "transactions",
-    key: "transactions",
-    render: (text, record) => (
-      <Link to={`/transaction/account/${record.account_id}`}>Transactions</Link>
-    ),
-  },
-];
+export const products = [{
+  id: 1,
+  image: 'https://flouringkitchen.com/wp-content/uploads/2023/07/BW1A4089-2.jpg',
+  name: 'Chocolate Cake',
+  description: 'A delicious chocolate cake with layers of creamy frosting.',
+  price: 19.99,
+},
+{
+  id: 2,
+  image: 'https://flouringkitchen.com/wp-content/uploads/2023/07/BW1A4089-2.jpg',
+  name: 'Chocolate Cake2',
+  description: 'A delicious chocolate cake with layers of creamy frosting.',
+  price: 19.99,
+},
+{
+  id: 3,
+  image: 'https://flouringkitchen.com/wp-content/uploads/2023/07/BW1A4089-2.jpg',
+  name: 'Chocolate Cake3',
+  description: 'A delicious chocolate cake with layers of creamy frosting.',
+  price: 19.99,
+}];

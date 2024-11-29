@@ -1,165 +1,62 @@
-import React, { useState } from "react";
-import { Button, Input, Table, Radio } from "antd";
-import { useNavigate } from "react-router-dom";
-import { getCustomerById } from "../api/customerApi";
-import { getAccountById } from "../api/accountApi";
-import { getCustomerAccountRelationByCustomerId } from "../api/customerAccountRelationApi";
-import { accountColumns } from "./constants";
+import React from "react";
+import { Link } from 'react-router-dom';
+import './HomePage.css';
 
 export default function Home() {
-  const navigate = useNavigate();
-  const [accounts, setAccounts] = useState([]);
-  const [selectedCustomers, setSelectedCustomers] = useState([]);
-  const [selectedAccount, setSelectedAccount] = useState([]);
-  const [showAccounts, setShowAccounts] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
-  const [searchCriteria, setSearchCriteria] = useState("customer_id");
-
-  const handleNetworkNavigation = (record) => {
-    navigate(`/company/customer/${record.customer_id}`);
-  };
-
-  const handleDashboardkNavigation = (record) => {
-    navigate(`/pages/Dashboard/${record.customer_id}`);
-  };
-
-  const getCustomerAccounts = (record) => {
-    setSelectedAccount([]);
-    const numericValue = parseInt(record.customer_id);
-    getCustomerAccountRelationByCustomerId(numericValue).then((relations) => {
-      relations.forEach((relation) => {
-        console.log(relation);
-        getAccountById(relation.account_id).then((account) => {
-          console.log(account);
-          if (account.account_id) {
-            setSelectedAccount((prev) => [...prev, account]);
-          }
-        });
-      });
-    });
-
-    setShowAccounts(true);
-  };
-
-  const handleSearch = () => {
-    if (!searchValue) {
-      return;
-    }
-    setShowAccounts(false);
-    const numericValue = parseInt(searchValue);
-    if (searchCriteria === "customer_id") {
-      getCustomerById(numericValue).then((customer) => {
-        if (customer.message) {
-          alert(customer.message);
-          return;
-        }
-        setSelectedCustomers([customer]);
-        setAccounts([]);
-      });
-    } else if (searchCriteria === "account_id") {
-      getAccountById(numericValue).then((account) => {
-        if (account.message) {
-          alert(account.message);
-          return;
-        }
-        setSelectedCustomers([]);
-        setAccounts([account]);
-      });
-    }
-  };
-
-  const customerColumns = [
-    {
-      title: "Id",
-      dataIndex: "customer_id",
-      key: "customer_id",
-    },
-    {
-      title: "Name",
-      dataIndex: "customer_name",
-      key: "customer_name",
-    },
-    {
-      title: "See Network",
-      dataIndex: "network",
-      key: "network",
-      render: (text, record) => (
-        <Button onClick={() => handleNetworkNavigation(record)}>Network</Button>
-      ),
-    },
-    {
-      title: "See Accounts",
-      dataIndex: "account",
-      key: "account",
-      render: (text, record) => (
-        <Button onClick={() => getCustomerAccounts(record)}>
-          See Account Details
-        </Button>
-      ),
-    },
-
-    {
-      title: "See Dashboard",
-      dataIndex: "dashboard",
-      key: "dashboard",
-      render: (text, record) => (
-        <Button onClick={() => handleDashboardkNavigation(record)}>
-          Financial Dashboard
-        </Button>
-      ),
-    },
-  ];
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Welcome to Our Company</h1>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <Input
-          style={{ width: "400px" }}
-          width={100}
-          placeholder="Search by customer id or account id"
-          onBlur={(e) => setSearchValue(e.target.value)}
+    <div style={{ fontFamily: "Arial, sans-serif" }}>
+      <div className="home-page">
+      {/* Header Section */}
+      <header className="hero-section">
+        <div className="hero-text">
+          <h1>Welcome to Amina's Kitchen</h1>
+          <p>Your go-to place for freshly baked goods made with love and care.</p>
+          <Link to="/products" className="hero-button">
+            Browse Products
+          </Link>
+        </div>
+      </header>
+
+      {/* About Section */}
+      <section className="about-section">
+        <h2>About Us</h2>
+        <p>
+          At Amina's Kitchen, we’ve been baking delightful treats for over a decade. What started as a
+          small family passion has blossomed into a beloved bakery known for its rich flavors, premium
+          ingredients, and a touch of home in every bite. Whether it's a warm loaf of bread, decadent
+          cakes, or delicate pastries, every creation reflects our dedication to quality and taste.
+        </p>
+        <img
+          src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp"
+          alt="Amina baking in the kitchen"
+          className="about-image"
         />
-        <Radio.Group
-          style={{ marginLeft: "10px" }}
-          value={searchCriteria}
-          onChange={(e) => setSearchCriteria(e.target.value)}
-        >
-          <Radio value="customer_id">Customer ID</Radio>
-          <Radio value="account_id">Account ID</Radio>
-        </Radio.Group>
-        <Button
-          onClick={handleSearch}
-          style={{
-            backgroundColor: "blue",
-            color: "white",
-            marginLeft: "10px",
-          }}
-        >
-          Search
-        </Button>
-      </div>
-      {selectedCustomers.length > 0 && (
-        <>
-          <h1>Customers List</h1>
-          <Table dataSource={selectedCustomers} columns={customerColumns} />
-        </>
-      )}
-      {accounts.length > 0 && (
-        <>
-          <h1>Accounts List</h1>
-          <Table dataSource={accounts} columns={accountColumns} />
-        </>
-      )}
-      {showAccounts && selectedCustomers.length > 0 && (
-        <>
-          <h1>Customer Accounts List</h1>
-          <Table dataSource={selectedAccount} columns={accountColumns} />
-        </>
-      )}
-      
-     
+      </section>
+
+      {/* Featured Products Section */}
+      <section className="products-section">
+        <h2>Our Best Sellers</h2>
+        <div className="product-gallery">
+          <img src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp" alt="Delicious Cake" />
+          <img src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp" alt="Fresh Cookies" />
+          <img src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp" alt="Freshly Baked Bread" />
+        </div>
+        <Link to="/products" className="products-link">
+          See All Products
+        </Link>
+      </section>
+
+      {/* Contact Section */}
+      <section className="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions or special requests? We're here to help!</p>
+        <Link to="/contact" className="contact-button">
+          Get in Touch
+        </Link>
+      </section>
     </div>
+      </div>
     
   );
 }
