@@ -1,3 +1,35 @@
+/* Products */
+.search-wrapper {
+    width: 50%;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .search-wrapper input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .search-wrapper button {
+    margin-left: 1vw;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-wrapper button:hover {
+    background-color: #0056b3;
+  }
+/* ProductView */
 .product-view-container {
     max-width: 800px;
     margin: 2rem auto;

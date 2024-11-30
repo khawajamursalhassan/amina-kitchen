@@ -7,10 +7,23 @@ import Products from "./pages/Products";
 import ProductView from "./pages/ProductView";
 import Navbar from "./components/Navbar";
 import "./assets/styles/App.css";
-import { products } from "./pages/constants";
+import axios from 'axios';
 
 function App() {
   const [cart, setCart] = React.useState([]);
+  const [products, setProducts] = React.useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://127.0.0.1:5000/products')
+      .then((response) => {
+        setProducts(response.data);
+        console.log('Products fetched:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching products:', error);
+      });
+  }, []);
 
   const addToCart = (product) => {
       if (cart.find((item) => item.id === product.id)) {
@@ -37,10 +50,6 @@ function App() {
     );
     setCart(newCart);
   };
-
-  // useEffect(() => {
-  //   console.log(cart);
-  // }, [cart]);
 
   return (
     <div className="App">
