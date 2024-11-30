@@ -1,8 +1,7 @@
-# amina-kitchen
-amina-kitchen
+# Amina's Kitchen
 
 ## folder structure:
--amina-kitchen
+- amina-kitchen
   - frontend
     - src
       - assets  
@@ -15,17 +14,17 @@ amina-kitchen
     - server.py
     - products.py
 
-## prerequisites
+## Prerequisites
 - python installed on the sytem
 - node install
 
-## start backend
+## Start Backend
 - On terminal head to the directory where server.py file is located
 - `cd amina-kitchen/backend`
 - `pip3 install flask flask-cors` or `pip install flask flask-cors` (to install dependencies)
 - `python3 server.py` or `python server.py` 
 
-- ## start frontend
+## Start Frontend
 - On terminal head to the directory frontend
 - `cd amina-kitchen/frontend`
 - `npm install`
