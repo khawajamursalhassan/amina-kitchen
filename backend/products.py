@@ -1,3 +1,4 @@
+# products array for frontend
 products = [
     {
   "id": 1,
