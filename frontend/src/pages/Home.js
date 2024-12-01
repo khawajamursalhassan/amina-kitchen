@@ -28,7 +28,7 @@ export default function Home() {
           cakes, or delicate pastries, every creation reflects our dedication to quality and taste.
         </p>
         <img
-          src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp"
+          src="https://i.postimg.cc/5ym40vR0/logo.png"
           alt="Amina baking in the kitchen"
           className="about-image"
         />
@@ -38,9 +38,9 @@ export default function Home() {
       <section className="products-section">
         <h2>Our Best Sellers</h2>
         <div className="product-gallery">
-          <img src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp" alt="Delicious Cake" />
-          <img src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp" alt="Fresh Cookies" />
-          <img src="https://www.fliprogram.com/u/2018/10/13155106/Home-Baker-Business-1-1024x683.webp" alt="Freshly Baked Bread" />
+          <img src="https://i.postimg.cc/RVXCx7tp/1.png" alt="Delicious Cake" />
+          <img src="https://i.postimg.cc/7P1Ym8Zk/2.png" alt="Fresh Cookies" />
+          <img src="https://i.postimg.cc/L8599JB9/4.png" alt="Freshly Baked Bread" />
         </div>
         <Link to="/products" className="products-link">
           See All Products
