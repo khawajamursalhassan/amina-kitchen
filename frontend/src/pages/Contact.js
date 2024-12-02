@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Contact.css";
 
+//contact page with a form for contact message and details
 export default function Contact() {
+  //object to store formData filled by the user
   const [formData, setFormData] = useState({
     name: "",
     email: "",
