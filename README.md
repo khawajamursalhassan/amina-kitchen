@@ -18,10 +18,13 @@
 - python installed on the sytem
 - node install
 
+## Install Backend dependencies
+- `cd amina-kitchen/backend`
+- `pip3 install flask flask-cors` or `pip install flask flask-cors` (to install dependencies)
+
 ## Start Backend
 - On terminal head to the directory where server.py file is located
 - `cd amina-kitchen/backend`
-- `pip3 install flask flask-cors` or `pip install flask flask-cors` (to install dependencies)
 - `python3 server.py` or `python server.py` 
 
 ## Start Frontend
