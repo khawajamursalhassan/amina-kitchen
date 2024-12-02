@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+//default navigation bar component used throughout the application
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
