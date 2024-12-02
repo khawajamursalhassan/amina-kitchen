@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import axios from 'axios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -7,12 +8,12 @@ import Products from "./pages/Products";
 import ProductView from "./pages/ProductView";
 import Navbar from "./components/Navbar";
 import "./assets/styles/App.css";
-import axios from 'axios';
 
 function App() {
   const [cart, setCart] = React.useState([]);
   const [products, setProducts] = React.useState([]);
 
+  //fetch all product as soon as the app starts
   useEffect(() => {
     axios
       .get('http://127.0.0.1:5000/products')
@@ -25,6 +26,7 @@ function App() {
       });
   }, []);
 
+  //function to add product to cart
   const addToCart = (product) => {
       if (cart.find((item) => item.id === product.id)) {
         alert("Product already in cart!");
@@ -39,6 +41,7 @@ function App() {
     setCart(newCart);
   };
 
+  //function to update quantity
   const onUpdateQuantity = (productId, newQuantity) => {
     const newCart = cart.map((item) =>
       item.id === productId
