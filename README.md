@@ -27,6 +27,10 @@
 - `cd amina-kitchen/backend`
 - `python3 server.py` or `python server.py` 
 
+## Install Frontend dependencies
+- `cd amina-kitchen/frontend`
+- `npm install`
+- 
 ## Start Frontend
 - On terminal head to the directory frontend
 - `cd amina-kitchen/frontend`
