@@ -34,4 +34,11 @@ products = [
   "name": 'E Chocolate Cake3',
   "description": 'A delicious chocolate cake with layers of creamy frosting.',
   "price": 19.99,
+},
+{
+  "id": 6,
+  "image": 'https://i.postimg.cc/7P1Ym8Zk/2.png',
+  "name": 'F Chocolate Cake4',
+  "description": 'A delicious chocolate cake with layers of creamy frosting.',
+  "price": 20.99,
 }];
