@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductCard.css';
 
+// product card component that displays each product with its details
 export default function ProductCard({ product }) {
   const { id, image, name, description, price } = product;
   const navigate = useNavigate();
