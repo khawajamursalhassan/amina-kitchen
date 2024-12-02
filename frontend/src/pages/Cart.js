@@ -1,6 +1,8 @@
 import React from 'react';
 import './Cart.css';
 
+//page to show cart and items added to cart accepted as parameters along
+//with update quantity and remove item functions
 export default function Cart({ cartItems, onUpdateQuantity, onRemoveItem }) {
   const calculateTotal = () =>
     cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
