@@ -23,16 +23,19 @@ def descending_sort(products):
     return products
 
 # path/url to get all the products
+# send data as JSON format for the React app to use
 @app.route('/products', methods=['GET'])
 def get_products():
     return jsonify(products)
 
 # path/url to get all the products in assending order
+# send data as JSON format for the React app to use
 @app.route('/assending-products', methods=['GET'])
 def get_assending_products():
     return jsonify(assending_sort(products))
 
 # path/url to get all the products in decending order
+# send data as JSON format for the React app to use
 @app.route('/descending-products', methods=['GET'])
 def get_descending_products():
     return jsonify(descending_sort(products))
